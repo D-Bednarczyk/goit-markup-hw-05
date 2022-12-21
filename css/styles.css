@@ -182,7 +182,6 @@ header {
 }
 
 .backdrop-shadow {
-  content: "";
   position: fixed;
   left: 0;
   top: 0;
@@ -192,17 +191,17 @@ header {
   background-color: rgba(0, 0, 0, 0.2);
   transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
   transition-property: visibility, opacity;
-  transition-duration: 2s;
+  transition-duration: 250ms;
 }
 
 .modal {
   position: absolute;
   width: 528px;
   height: 581px;
-  left: 0;
-  right: 0;
-  margin: auto;
-  top: 221px;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+
   background-color: var(--brand-white);
   box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.12), 0px 1px 1px rgba(0, 0, 0, 0.14),
     0px 2px 1px rgba(0, 0, 0, 0.2);
@@ -213,7 +212,7 @@ header {
   visibility: visible;
   opacity: 1;
   z-index: 2;
-  display: block;
+  /*display: block;*/
 }
 
 .is-hidden {
@@ -226,7 +225,12 @@ header {
 }
 
 .modal-btn {
+  display: flex;
+  justify-content: center;
+  align-items: center;
   margin: 0;
+  width: 30px;
+  height: 30px;
   color: #000000;
   position: absolute;
   top: 8px;
@@ -286,22 +290,20 @@ h2 {
   z-index: -1;
 }
 
-.overlay-label {
+.label-text {
+  line-height: 16px;
+  text-transform: uppercase;
+  font-weight: 700;
+
+  color: var(--brand-white);
   background: rgba(47, 48, 58, 0.8);
   position: absolute;
   bottom: 0;
-  padding: 27px 0;
+  height: 70px;
   width: 370px;
-}
-
-.label-text {
-  font-size: 14px;
-  line-height: 16px;
-  text-align: center;
-  letter-spacing: 0.03em;
-  text-transform: uppercase;
-
-  color: var(--brand-white);
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .ourteam {
